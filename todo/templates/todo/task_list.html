@@ -16,7 +16,7 @@
    
 
 <div>
-    <a id="add-link" href="{% url 'task-create'%}">Add a Task</a>
+    <a id="add-link" href="{% url 'task-create'%}">&#43; Add a Task</a>
 </div>
 
 
@@ -28,12 +28,14 @@
            <div class="task-title">
                <div class="task-complete-icon"></div>
                <a href="{% url 'task-update' task.id %}">{{task}}</a>
+               <p>{{task.description}}</p>
            </div>
            <a class="delete-link" href="{% url 'task-delete' task.id%}">&#215;</a>
         {% else %} 
            <div class="task-title">
              <div class="task-incomplete-icon"></div>
              <a href="{% url 'task-update' task.id %}">{{task}}</a>
+             <p>{{task.description}}</p>
            </div>
            <a class="delete-link" href="{% url 'task-delete' task.id%}">&#215;</a>
 
